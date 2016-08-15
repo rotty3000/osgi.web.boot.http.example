@@ -45,6 +45,16 @@
 ## in order to enhance the resolution process.
 ##
 
+-augment.eq_ht_je: \
+	org.eclipse.equinox.http.jetty; \
+		capability:="  equinox.module.data;activation.policy=eager, \
+					   generic.dependency;generic.dependency='osgi.servlet.container';version:Version='1.0.0'"
+
+-augment.eq_ht_se: \
+	org.eclipse.equinox.http.servlet; \
+		capability:="  equinox.module.data;activation.policy=eager"; \
+		requirement:=" generic.dependency;filter:='(generic.dependency=osgi.servlet.container)';effective:=active"
+
 -augment.fe_gc: \
 	org.apache.felix.gogo.command; \
 		capability:="  generic.dependency;generic.dependency='osgi.shell.command';version:Version='1.0.0'"
@@ -53,14 +63,6 @@
 	org.apache.felix.gogo.shell; \
 		capability:="  osgi.implementation;osgi.implementation='osgi.shell';version:Version='1.0.0'"; \
 		requirement:=" generic.dependency;filter:='(generic.dependency=osgi.shell.command)';effective:=active"
-
--augment.eq_ht_je: \
-	org.eclipse.equinox.http.jetty; \
-		capability:="  equinox.module.data;activation.policy=eager"
-
--augment.eq_ht_se: \
-	org.eclipse.equinox.http.servlet; \
-		capability:="  equinox.module.data;activation.policy=eager"
 
 ##
 ## Run defaults
