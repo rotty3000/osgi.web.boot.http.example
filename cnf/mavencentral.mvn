@@ -1,0 +1,4 @@
+##
+## Add one maven GAV per line to import artifacts from Maven Central. The syntax
+## used is the colon format "groupid:artifactid:version"
+##
