@@ -1,55 +1,28 @@
 #
 # -ENROUTE-
-# 
+#
 # This file contains the setup for OSGi enRoute
 #
 
-
 javac.source: 			1.8
 javac.target: 			1.8
--runee:					JavaSE-1.8
 
-Service-Component: 		*
--dsannotations: 		*
--metatypeannotations:	*
 -contract:				*
 
-
 test-cases: 			${classes;NAMED;*Test}
+
 -resolve.effective:		resolve, active
--releaserepo:                   Release
 
--plugin.4.Central:  \
-\
-        aQute.bnd.deployer.repository.wrapper.Plugin; \
-            location            =	"${build}/cache/wrapper"; \
-            reindex				=	true, \
-\
-        aQute.bnd.jpm.Repository; \
-	        includeStaged   	=       true; \
-	        name                =       Central; \
-	        location            =       ~/.bnd/shacache; \
-	        index               =       ${build}/central.json
-	        
--plugin.6.Local: \
-        aQute.bnd.deployer.repository.LocalIndexedRepo; \
-            name                =       Local ; \
-            pretty              =       true ; \
-            local               =       ${build}/local
+debug-bundles: \
+	osgi.identity;filter:='(osgi.identity=osgi.enroute.webconsole.xray.provider)',\
+	osgi.implementation;filter:='(osgi.implementation=osgi.metatype)',\
+	osgi.implementation;filter:='(osgi.implementation=osgi.log)',\
+	osgi.implementation;filter:='(osgi.implementation=osgi.event)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)', \
+	osgi.identity;filter:='(osgi.identity=osgi.enroute.base.debug.provider)'
 
-	        
-
--plugin.9.Release: \
-\
-        aQute.bnd.deployer.repository.LocalIndexedRepo; \
-            name                =       Release ; \
-            pretty              =       true ; \
-            local               =       ${build}/release
-
-
-
-
-# Temporary bug fix for bndtools 
+# Temporary bug fix for bndtools
 # Java 1.8
 -runsystempackages.bugfix = \
  javax.annotation.processing;version=0,\
@@ -134,4 +107,4 @@ test-cases: 			${classes;NAMED;*Test}
  org.xml.sax;version=0,\
  org.xml.sax.ext;version=0,\
  org.xml.sax.helpers;version=0
- 
+

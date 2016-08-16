@@ -1,0 +1,31 @@
+-runblacklist.default:\
+	osgi.identity;filter:='(osgi.identity=osgi.enroute.base.api)', \
+	osgi.identity;filter:='(osgi.identity=osgi.cmpn)', \
+	osgi.identity;filter:='(osgi.identity=osgi.core)', \
+	osgi.identity;filter:='(osgi.identity=biz.aQute.junit)', \
+	osgi.identity;filter:='(osgi.identity=biz.aQute.launcher)', \
+	osgi.identity;filter:='(osgi.identity=biz.aQute.remote.launcher)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.http.jetty)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.http.servlet-api)'
+
+-runee: JavaSE-1.8
+-runfw: org.eclipse.osgi
+
+-runpath.default:\
+	com.rotty3000.equinox.runtime.augments,\
+	run.resources
+
+-runproperties.default:\
+	eclipse.consoleLog=true,\
+	eclipse.log.enabled=true,\
+	org.eclipse.equinox.http.jetty.activation.policy.ignored=true,\
+	org.eclipse.equinox.http.jetty.autostart=true,\
+	org.osgi.service.http.port=8080,\
+	osgi.console=
+
+-runrequires.default: \
+	osgi.identity;filter:='(&(osgi.identity=org.eclipse.equinox.http.jetty)(version>=3.4.0))',\
+	osgi.identity;filter:='(&(osgi.identity=org.eclipse.equinox.http.servlet)(version>=1.4.0))'
+
+-runsystempackages.default:		javax.script
+-runsystemcapabilities.default: 	${native_capability}
