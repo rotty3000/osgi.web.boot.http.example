@@ -7,10 +7,6 @@
 -buildrepo: 					MavenLocal
 -releaserepo:                   Release
 
--pom: \
-    groupid =   com.wedeploy, \
-    version =   ${versionmask;===;${@version}}-SNAPSHOT
-
 -plugin.4.Central: \
     aQute.bnd.repository.maven.provider.MavenBndRepository; \
 		name				=	MavenCentral;\

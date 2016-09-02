@@ -1,3 +1,7 @@
 #
 # This file is left open for you to define your macros
 #
+
+-pom: \
+    groupid =   com.wedeploy, \
+    version =   ${versionmask;===;${@version}}-SNAPSHOT
