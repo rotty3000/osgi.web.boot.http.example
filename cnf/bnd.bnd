@@ -1,4 +1,3 @@
-Bundle-SymbolicName: run.resources
 Bundle-Version: 1.0.0
 -fixupmessages: "*";restrict:=warning;is:=ignore
 -includeresource: /META-INF/augments.properties=${build}/ext/augments.bnd

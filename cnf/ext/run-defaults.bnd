@@ -14,7 +14,7 @@
 
 -runpath.default:\
 	com.rotty3000.equinox.runtime.augments,\
-	run.resources
+	cnf;version=snapshot
 
 -runproperties.default:\
 	eclipse.consoleLog=true,\
