@@ -4,17 +4,12 @@
 # This file defines the properties to be used in an enRoute workspace.
 #
 
--buildrepo: 					MavenLocal
+-buildrepo:                     MavenLocal
 -releaserepo:                   Release
-
--plugin.4.Central: \
-    aQute.bnd.repository.maven.provider.MavenBndRepository; \
-		name				=	MavenCentral;\
-		releaseUrl			=	https://repo.maven.apache.org/maven2/
 
 -plugin.6.Local: \
     aQute.bnd.repository.maven.provider.MavenBndRepository; \
-        name                =	MavenLocal
+        name                =   MavenLocal
 
 -plugin.7.Committed: \
     aQute.bnd.deployer.repository.LocalIndexedRepo; \
@@ -24,16 +19,32 @@
 
 -plugin.9.Release: \
     aQute.bnd.deployer.repository.LocalIndexedRepo; \
-        local               =	${build}/release; \
-        name                =	Release; \
-        pretty              =	true
+        local               =   ${build}/release; \
+        name                =   Release; \
+        pretty              =   true
 
--plugin.Y.NeonR-4.6-201606061100: \
+-plugin.L.com.liferay: \
+    aQute.bnd.repository.maven.pom.provider.BndPomRepository; \
+        name                =   "Liferay In MavenCentral"; \
+        query               =   "q=g:com.liferay&rows=10000"; \
+        releaseUrls         =   "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+
+-plugin.M.Maven.Central: \
+    aQute.bnd.repository.maven.provider.MavenBndRepository; \
+        name                =   MavenCentral; \
+        releaseUrl          =   "https://repo.maven.apache.org/maven2/"
+
+-plugin.N.Eclipse.Neon: \
     aQute.bnd.repository.p2.provider.P2Repository; \
-        name				=	"Eclipse Neon (4.6)"; \
-        url					=	"http://download.eclipse.org/eclipse/updates/4.6/R-4.6-201606061100/"
+        name                =   "Eclipse 4.6 (Neon)"; \
+        url                 =   "http://download.eclipse.org/eclipse/updates/4.6/R-4.6-201606061100/"
+
+-plugin.O.Orbit.Neon: \
+    aQute.bnd.repository.p2.provider.P2Repository; \
+        name                =   "Orbit (Neon)"; \
+        url                 =   "http://download.eclipse.org/tools/orbit/downloads/drops/R20160520211859/repository/"
 
 -plugin.enroute.distro = \
-	aQute.bnd.deployer.repository.FixedIndexedRepo; \
-        locations			=	https://raw.githubusercontent.com/osgi/osgi.enroute/v1.0.0/cnf/distro/index.xml;\
-        name				=	Distro
+    aQute.bnd.deployer.repository.FixedIndexedRepo; \
+        locations           =   "https://raw.githubusercontent.com/osgi/osgi.enroute/v1.0.0/cnf/distro/index.xml";\
+        name                =   Distro

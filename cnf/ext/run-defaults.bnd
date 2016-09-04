@@ -1,6 +1,7 @@
 -runblacklist.default:\
 	osgi.identity;filter:='(osgi.identity=osgi.enroute.base.api)', \
 	osgi.identity;filter:='(osgi.identity=osgi.cmpn)', \
+	osgi.identity;filter:='(osgi.identity=org.osgi.compendium)', \
 	osgi.identity;filter:='(osgi.identity=osgi.core)', \
 	osgi.identity;filter:='(osgi.identity=biz.aQute.junit)', \
 	osgi.identity;filter:='(osgi.identity=biz.aQute.launcher)', \
