@@ -45,6 +45,6 @@
         url                 =   "http://download.eclipse.org/tools/orbit/downloads/drops/R20160520211859/repository/"
 
 -plugin.enroute.distro = \
-    aQute.bnd.deployer.repository.FixedIndexedRepo; \
+    aQute.bnd.repository.osgi.OSGiRepository; \
         locations           =   "https://raw.githubusercontent.com/osgi/osgi.enroute/v1.0.0/cnf/distro/index.xml";\
         name                =   Distro
