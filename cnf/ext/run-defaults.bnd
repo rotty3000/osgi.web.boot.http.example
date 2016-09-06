@@ -1,4 +1,5 @@
 -runblacklist.default:\
+	osgi.identity;filter:='(osgi.identity=com.liferay.portal.kernel)', \
 	osgi.identity;filter:='(osgi.identity=osgi.enroute.base.api)', \
 	osgi.identity;filter:='(osgi.identity=osgi.cmpn)', \
 	osgi.identity;filter:='(osgi.identity=org.osgi.compendium)', \

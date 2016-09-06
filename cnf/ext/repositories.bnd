@@ -47,4 +47,5 @@
 -plugin.enroute.distro = \
     aQute.bnd.repository.osgi.OSGiRepository; \
         locations           =   "https://raw.githubusercontent.com/osgi/osgi.enroute/v1.0.0/cnf/distro/index.xml";\
+        poll.time           =   -1; \
         name                =   Distro
