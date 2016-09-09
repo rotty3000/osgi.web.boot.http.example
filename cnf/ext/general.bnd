@@ -13,6 +13,12 @@ test-cases: 			${classes;NAMED;*Test}
 
 -resolve.effective:		resolve, active
 
+# Enable the ability to collect all failed requirements instead of failing on the first.
+-resolvefailfast: false
+
+# Reduce the verbosity of the resolution errors when not failing fast.
+#-resolveverbose: false
+
 debug-bundles: \
 	osgi.identity;filter:='(osgi.identity=osgi.enroute.webconsole.xray.provider)',\
 	osgi.implementation;filter:='(osgi.implementation=osgi.metatype)',\
