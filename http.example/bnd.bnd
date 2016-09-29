@@ -1,0 +1,9 @@
+Bundle-Version: 1.0.0
+Require-Capability:\
+	osgi.implementation;\
+		filter:="(osgi.implementation=osgi.http)"
+#,\
+#	osgi.implementation;\
+#		filter:="(osgi.implementation=osgi.shell)";\
+#		effective:=active
+-buildpath: osgi.enroute.base.api
