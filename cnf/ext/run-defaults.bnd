@@ -1,14 +1,20 @@
 -runblacklist.default:\
 	osgi.identity;filter:='(osgi.identity=com.liferay.portal.kernel)', \
-	osgi.identity;filter:='(osgi.identity=osgi.enroute.base.api)', \
-	osgi.identity;filter:='(osgi.identity=osgi.cmpn)', \
-	osgi.identity;filter:='(osgi.identity=org.osgi.compendium)', \
-	osgi.identity;filter:='(osgi.identity=osgi.core)', \
+	osgi.identity;filter:='(osgi.identity=com.liferay.portal.impl)', \
 	osgi.identity;filter:='(osgi.identity=biz.aQute.junit)', \
 	osgi.identity;filter:='(osgi.identity=biz.aQute.launcher)', \
 	osgi.identity;filter:='(osgi.identity=biz.aQute.remote.launcher)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.http.jetty)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.http.servlet-api)',\
+	osgi.identity;filter:='(osgi.identity=org.eclipse.equinox.ds)',\
+	osgi.identity;filter:='(osgi.identity=org.eclipse.osgi.services)',\
+	osgi.identity;filter:='(osgi.identity=org.osgi.compendium)', \
+	osgi.identity;filter:='(osgi.identity=org.osgi.enterprise)', \
+	osgi.identity;filter:='(osgi.identity=osgi.cmpn)', \
+	osgi.identity;filter:='(osgi.identity=osgi.core)', \
+	osgi.identity;filter:='(osgi.identity=osgi.enroute.base.api)', \
+	osgi.identity;filter:='(osgi.identity=osgi.enterprise)', \
+	osgi.identity;filter:='(&(osgi.identity=log4j)(!(version>=1.2.17)))',\
 	osgi.identity;filter:='(&(osgi.identity=org.eclipse.equinox.http.jetty)(!(version>=3.4.0)))',\
 	osgi.identity;filter:='(&(osgi.identity=org.eclipse.equinox.http.servlet)(!(version>=1.4.0)))'
 

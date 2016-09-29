@@ -13,8 +13,8 @@ test-cases: 			${classes;NAMED;*Test}
 
 -resolve.effective:		resolve, active
 
-# Enable the ability to collect all failed requirements instead of failing on the first.
--resolvefailfast: false
+# Experimental: Enable the ability to collect all failed requirements instead of failing on the first.
+-resolve.failfast: false
 
 # Reduce the verbosity of the resolution errors when not failing fast.
 #-resolveverbose: false
