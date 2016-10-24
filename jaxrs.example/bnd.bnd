@@ -1,4 +1,5 @@
 Bundle-Version: 1.0.0
 -buildpath: \
 	org.osgi.service.component.annotations,\
-	javax.ws.rs-api
+	javax.ws.rs-api,\
+	custom.reqcap.annotations;version=latest
