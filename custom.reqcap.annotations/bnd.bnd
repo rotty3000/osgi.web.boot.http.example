@@ -1,0 +1,6 @@
+Bundle-Version: 1.0.0
+-buildpath: \
+	biz.aQute.bnd.annotation,\
+	org.osgi.namespace.extender,\
+	org.osgi.namespace.implementation
+Export-Package: custom.reqcap.annotations

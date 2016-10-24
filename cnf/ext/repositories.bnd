@@ -17,35 +17,57 @@
         name                =   Committed; \
         pretty              =   true
 
+-plugin.8.Maven.Central: \
+    aQute.bnd.repository.maven.provider.MavenBndRepository; \
+        name                =   MavenCentral; \
+        releaseUrl          =   "https://repo.maven.apache.org/maven2/"
+
 -plugin.9.Release: \
     aQute.bnd.deployer.repository.LocalIndexedRepo; \
         local               =   ${build}/release; \
         name                =   Release; \
         pretty              =   true
 
--plugin.L.com.liferay: \
+-plugin.K.org.osgi: \
     aQute.bnd.repository.maven.pom.provider.BndPomRepository; \
-        name                =   "Liferay In MavenCentral"; \
-        query               =   "q=g:com.liferay&rows=10000"; \
-        releaseUrls         =   "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+        name                =   "OSGi-MC"; \
+        query               =   "q=g:org.osgi+AND+a:org.osgi.*&rows=10000"
 
--plugin.M.Maven.Central: \
-    aQute.bnd.repository.maven.provider.MavenBndRepository; \
-        name                =   MavenCentral; \
-        releaseUrl          =   "https://repo.maven.apache.org/maven2/"
+#-plugin.L.biz.aQute.bnd: \
+#    aQute.bnd.repository.maven.pom.provider.BndPomRepository; \
+#        name                =   "BND-MC"; \
+#        query               =   "q=g:biz.aQute.bnd+AND+a:biz.aQute.*&rows=10000&core=gav";\
+#        releaseUrls			=	"https://jcenter.bintray.com,https://repo1.maven.org/maven2"
+
+#-plugin.L.org.apache.felix: \
+#    aQute.bnd.repository.maven.pom.provider.BndPomRepository; \
+#        name                =   "ApacheFelix-MC"; \
+#        query               =   "q=g:org.apache.felix+AND+a:org.apache.felix.*&rows=10000&core=gav";\
+#        releaseUrls         =   "https://repository.apache.org/content/groups/public,https://repo1.maven.org/maven2"
+
+#-plugin.M.com.liferay: \
+#    aQute.bnd.repository.maven.pom.provider.BndPomRepository; \
+#        name                =   "Liferay-MC"; \
+#        query               =   "q=g:com.liferay+AND+a:com.liferay.*&rows=10000&core=gav"; \
+#        releaseUrls         =   "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+
+-plugin.M.Jetty9.3.9.v20160517: \
+    aQute.bnd.repository.p2.provider.P2Repository; \
+        name				=	"Eclipse Jetty (9.3.9)"; \
+        url					=	"http://download.eclipse.org/jetty/updates/jetty-bundles-9.x/9.3.9.v20160517/"
 
 -plugin.N.Eclipse.Neon: \
     aQute.bnd.repository.p2.provider.P2Repository; \
         name                =   "Eclipse 4.6 (Neon)"; \
         url                 =   "http://download.eclipse.org/eclipse/updates/4.6/R-4.6-201606061100/"
 
--plugin.O.Orbit.Neon: \
-    aQute.bnd.repository.p2.provider.P2Repository; \
-        name                =   "Orbit (Neon)"; \
-        url                 =   "http://download.eclipse.org/tools/orbit/downloads/drops/R20160520211859/repository/"
+#-plugin.O.Orbit.Neon: \
+#    aQute.bnd.repository.p2.provider.P2Repository; \
+#        name                =   "Orbit (Neon)"; \
+#        url                 =   "http://download.eclipse.org/tools/orbit/downloads/drops/R20160520211859/repository/"
 
 -plugin.enroute.distro = \
     aQute.bnd.repository.osgi.OSGiRepository; \
         locations           =   "https://raw.githubusercontent.com/osgi/osgi.enroute/v1.0.0/cnf/distro/index.xml";\
-        poll.time           =   -1; \
-        name                =   Distro
+        name                =   Distro;\
+        poll.time           =   -1

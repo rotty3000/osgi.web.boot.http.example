@@ -1,0 +1,10 @@
+Bundle-Version: 1.0.0
+
+-includeresource.bundle: META-INF/resources=web-resources
+
+-buildpath: \
+	javax.websocket-api,\
+	org.osgi.service.component.annotations,\
+	org.osgi.service.http.whiteboard,\
+	javax.servlet-api,\
+	custom.reqcap.annotations;version=latest

@@ -1,15 +1,37 @@
+-augment.javax.servlet-api: \
+	javax.servlet-api; \
+		requirement:="osgi.implementation;filter:='(osgi.implementation=osgi.http)'"
+
+-augment.javax.websocket-api: \
+	javax.websocket-api; \
+		requirement:="osgi.identity;filter:='(osgi.identity=com.rotty3000.websocket.api.spifly.fragment)', \
+		              osgi.extender;filter:='(&(osgi.extender=jetty.websocket.whiteboard)(version>=1.0.0)(!(version>=2.0.0)))'"
+
+-augment.org.apache.aries.jax-rs.cxf-common: \
+	org.apache.aries.jax-rs.cxf-common; \
+		requirement:="osgi.extender;filter:='(&(osgi.extender=aries.jax-rs)(version>=1.0.0)(!(version>=2.0.0)))', \
+		              osgi.implementation;filter:='(osgi.implementation=osgi.http)'"
+
+-augment.org.apache.commons.fileupload: \
+	org.apache.commons.fileupload; \
+		capability:=" generic.dependency;generic.dependency='commons.fileupload'"
+
 -augment.org.apache.felix.gogo.command: \
 	org.apache.felix.gogo.command; \
-		capability:=" generic.dependency;generic.dependency='osgi.shell.command';version:Version='1.0.0'"
+		capability:=" generic.dependency;generic.dependency='gogo.shell.command';version:Version='1.0.0'"; \
+		version='1.0.0'
 
 -augment.org.apache.felix.gogo.shell: \
 	org.apache.felix.gogo.shell; \
-		capability:=" osgi.implementation;osgi.implementation='osgi.shell';version:Version='1.0.0'"; \
-		requirement:="generic.dependency;filter:='(generic.dependency=osgi.shell.command)';effective:=active"
+		capability:=" osgi.implementation;osgi.implementation='gogo.shell';version:Version='1.0.0'"; \
+		requirement:="generic.dependency;filter:='(generic.dependency=gogo.shell.command)';effective:=active"; \
+		version='1.0.0'
 
--augment.org.apache.felix.http.api: \
-	org.apache.felix.http.api; \
-		requirement:="osgi.implementation;filter:='(&(osgi.implementation=osgi.http)(version>=1.0.0)(!(version>=2.0)))'"
+-augment.org.apache.felix.gogo.jline: \
+	org.apache.felix.gogo.jline; \
+		capability:=" osgi.implementation;osgi.implementation='gogo.jline';version:Version='1.0.0'"; \
+		requirement:="generic.dependency;filter:='(generic.dependency=gogo.shell.command)';effective:=active"; \
+		version='1.0.0'
 
 -augment.org.apache.felix.log: \
 	org.apache.felix.log; \
@@ -38,7 +60,8 @@
 -augment.org.eclipse.equinox.http.servlet: \
 	org.eclipse.equinox.http.servlet; \
 		capability:=" equinox.module.data;activation.policy=eager"; \
-		requirement:="generic.dependency;filter:='(generic.dependency=osgi.servlet.container)';effective:=active"
+		requirement:="generic.dependency;filter:='(generic.dependency=commons.fileupload)';effective:=active,\
+		              generic.dependency;filter:='(generic.dependency=osgi.servlet.container)';effective:=active"
 
 -augment.org.knopflerfish.bundle.useradmin: \
 	org.knopflerfish.bundle.useradmin; \

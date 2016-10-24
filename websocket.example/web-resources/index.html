@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/resources/style.css"/>
+	<script type="text/javascript">
+		var websocketsEnabled = ("WebSocket" in window);
+		var ws;
+
+		function logg(msg) {
+			var output = document.getElementById('output')
+			output.innerHTML += '<pre>' + msg + '</pre>';
+			output.scrollTop = output.scrollHeight;
+		}
+
+		function start() {
+			if (!websocketsEnabled) {
+				logg("[CON] No WebSocket support. Aborting!");
+
+				return;
+			}
+
+			ws = new WebSocket("ws://" + document.location.host + "/servertime");
+
+			ws.onopen = function(event) {
+				ws.send("start");
+
+				logg("[CON] Asked for server time.");
+			};
+
+			ws.onmessage = function(event) {
+				logg(event.data);
+			};
+
+			ws.onclose = function(event) {
+				logg("[CON] " + event.code + " Connection closed: " + event.reason);
+
+			    toggle();
+			};
+
+		    toggle();
+		}
+
+		function stop() {
+			if (!ws) {
+				return;
+			}
+
+			ws.onclose = function () {};
+			logg("[CON] Closing the connection.")
+			ws.send("stop");
+		    ws.close()
+		    ws = null;
+
+		    toggle();
+		}
+
+		function toggle() {
+			var input = document.querySelector(".switch");
+			if (input.innerHTML == "Stop") {
+				input.innerHTML = "Start";
+				input.href="javascript:start()";
+			}
+			else {
+				input.innerHTML = "Stop";
+				input.href="javascript:stop()";
+			}
+		}
+	</script>
+</head>
+<body>
+	<h2>Server Time</h2>
+	<form id="logDetails">
+		<a class="switch" href="javascript:start()">Start</a>
+	</form>
+	<div id="output"></div>
+	<script>
+	(function() {
+		if (websocketsEnabled) {
+			logg("[COM] WebSocket supported by your Browser! Start getting server time when ready!");
+        }
+        else {
+        	logg("[COM] WebSocket NOT supported by your Browser!");
+		}
+	})();
+	</script>
+</body>
+</html>
