@@ -8,8 +8,6 @@ import javax.ws.rs.ext.Provider;
 
 import org.osgi.service.component.annotations.Component;
 
-import custom.reqcap.annotations.GogoShell;
-
 @Component(
 	immediate = true,
 	property = {
@@ -18,7 +16,6 @@ import custom.reqcap.annotations.GogoShell;
 	}
 )
 @Provider
-@GogoShell
 public class ExampleFilter implements ContainerRequestFilter {
 
 	@Override
