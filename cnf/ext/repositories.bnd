@@ -31,7 +31,8 @@
 -plugin.K.org.osgi: \
     aQute.bnd.repository.maven.pom.provider.BndPomRepository; \
         name                =   "OSGi-MC"; \
-        query               =   "q=g:org.osgi+AND+a:org.osgi.*&rows=10000"
+        query               =   "q=g:org.osgi+AND+a:org.osgi.*&rows=10000"; \
+        releaseUrls         =   "https://repo1.maven.org/maven2"
 
 #-plugin.L.biz.aQute.bnd: \
 #    aQute.bnd.repository.maven.pom.provider.BndPomRepository; \
