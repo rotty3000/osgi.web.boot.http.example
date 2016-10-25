@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.http.whiteboard.HttpWhiteboardConstants;
 
-import custom.reqcap.annotations.GogoJLine;
-
 @Component(
 	immediate = true,
 	property = {
@@ -21,7 +19,6 @@ import custom.reqcap.annotations.GogoJLine;
 	},
 	service = Servlet.class
 )
-@GogoJLine
 public class SampleServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;

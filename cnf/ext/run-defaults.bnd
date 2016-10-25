@@ -10,6 +10,7 @@
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.http.jetty)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.http.servlet-api)',\
 	osgi.identity;filter:='(osgi.identity=org.eclipse.equinox.ds)',\
+	osgi.identity;filter:='(osgi.identity=org.eclipse.jetty.osgi-servlet-api)',\
 	osgi.identity;filter:='(osgi.identity=org.eclipse.osgi.services)',\
 	osgi.identity;filter:='(osgi.identity=org.osgi.compendium)',\
 	osgi.identity;filter:='(osgi.identity=org.osgi.enterprise)',\

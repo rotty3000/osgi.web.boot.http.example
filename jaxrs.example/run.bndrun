@@ -14,7 +14,6 @@
 	org.eclipse.equinox.metatype;version='[1.4.200,1.4.201)',\
 	org.eclipse.jetty.http;version='[9.3.9,9.3.10)',\
 	org.eclipse.jetty.io;version='[9.3.9,9.3.10)',\
-	org.eclipse.jetty.osgi-servlet-api;version='[3.1.0,3.1.1)',\
 	org.eclipse.jetty.security;version='[9.3.9,9.3.10)',\
 	org.eclipse.jetty.server;version='[9.3.9,9.3.10)',\
 	org.eclipse.jetty.servlet;version='[9.3.9,9.3.10)',\
@@ -25,4 +24,5 @@
 	org.apache.felix.bundlerepository;version='[2.0.8,2.0.9)',\
 	org.apache.felix.gogo.command;version='[1.0.0,1.0.1)',\
 	org.apache.felix.gogo.runtime;version='[1.0.0,1.0.1)',\
-	org.apache.felix.gogo.shell;version='[1.0.0,1.0.1)'
+	org.apache.felix.gogo.shell;version='[1.0.0,1.0.1)',\
+	javax.servlet-api;version='[3.1.0,3.1.1)'
