@@ -1,6 +1,6 @@
-## Http Example
+## Web Examples
 
-This is a simple project demonstrating the use of the osgi.web.boot bndtools template to boostrap a small http server.
+This is a simple project demonstrating the use of the osgi.web.boot bndtools template to boostrap some small web servers.
 
 ### To build the project
 
@@ -12,12 +12,33 @@ Use gradle:
 
 Execute the export task on the `*.bndrun` files like so:
 
-`./gradlew http.example:export.run`
+```
+./gradlew servlet.example:export.run
+OR
+./gradlew websocket.example:export.run
+OR
+./gradlew jaxrs.example:export.run
+```
 
-The resulting executable jar will end up in `<project>/generated/distributions/executable/`. In this case the jar is `http.example/generated/distributions/executable/run.jar` (the name is derived from the name of the `bndrun` file).
+The resulting executable jar will end up in `<project>/generated/distributions/executable/`. 
+In this case the jars are:
+
+```
+servlet.example/generated/distributions/executable/run.jar
+websocket.example/generated/distributions/executable/run.jar
+jaxrs.example/generated/distributions/executable/run.jar
+```
+**Note:** the name is derived from the name of the `bndrun` file.
 
 ### To execute the jar
 
 Use the command:
 
-`java -jar run.jar`
+```
+java -jar servlet.example/generated/distributions/executable/run.jar
+OR
+java -jar websocket.example/generated/distributions/executable/run.jar
+OR
+java -jar jaxrs.example/generated/distributions/executable/run.jar
+
+```
